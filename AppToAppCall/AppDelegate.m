@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [AVAudioSession.sharedInstance requestRecordPermission:^(BOOL granted) {
+        NSLog(@"Allow microphone use. Response: %d", granted);
+    }];
     return YES;
 }
 
